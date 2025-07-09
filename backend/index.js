@@ -6,6 +6,7 @@ import paymentRoute from "./routes/productsRoute.js";
 const app = express();
 dotenv.config({ path: "../backend/.env" });
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 5000;
 

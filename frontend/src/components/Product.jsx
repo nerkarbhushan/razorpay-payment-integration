@@ -12,6 +12,27 @@ function Product({ products }) {
     });
     const { order } = orderData;
     console.log(order);
+
+    // Open Razorpay Checkout
+    const options = {
+      key,
+      amount,
+      currency: "INR",
+      name: "Nerkar B",
+      description: "Razorpay",
+      order_id: order.id,
+      callback_url: "/api/v1/paymentVerification",
+      prefill: {
+        name: "Bhushan Nerkar",
+        email: "bhushan@example.com",
+        contact: "9999999999",
+      },
+      theme: {
+        color: "#F37254",
+      },
+    };
+    const rzp = new Razorpay(options);
+    rzp.open();
   };
 
   return (
