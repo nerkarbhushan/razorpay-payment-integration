@@ -4,9 +4,14 @@ import axios from "axios";
 
 function Product({ products }) {
   const checkoutHandler = async (amount) => {
-    console.log(amount);
-    const { data } = await axios.post("/api/v1/payment/process", { amount });
-    console.log(data);
+    const { data: keyData } = await axios.get("/api/v1/getKey");
+    console.log(keyData);
+    const { key } = keyData;
+    const { data: orderData } = await axios.post("/api/v1/payment/process", {
+      amount,
+    });
+    const { order } = orderData;
+    console.log(order);
   };
 
   return (

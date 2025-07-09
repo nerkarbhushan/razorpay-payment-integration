@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import Razorpay from "razorpay";
-import paymentRoute from "./routes/paymentRoute.js";
+import paymentRoute from "./routes/productsRoute.js";
 
 const app = express();
 dotenv.config({ path: "../backend/.env" });
