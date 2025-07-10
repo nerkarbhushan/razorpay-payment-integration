@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 export const instance = new Razorpay({
   key_id: process.env.RAZORPAY_API_KEY,
-  key_secret: process.env.RAZORPAY_API_SECRET_KEY,
+  key_secret: process.env.RAZORPAY_API_SECRET,
 });
 
 instance.orders.all().then(console.log).catch(console.error);
